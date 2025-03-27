@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gungame timer</title>
+    <link rel="icon" href="./images/final-logo.png">
+    <link rel="stylesheet" href="./files/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="body">
+    <header dir="rtl">
+        <div><img src="./images/final-logo.png" style="width: 110px;" alt=""></div>
+        <button id="set-btn" style="margin-top: 20px;" class="btn"><i class="fa fa-gear"></i></button>
+    </header>
+    <div class="drp-downs" style="display: flex;">
+        <div class="settings" id="settings">
+            <div>
+                <div style="width: 100%; height: 20px; padding: 15px; display: flex;">
+                    <i id="close" class="fa fa-close fa-2x" style="cursor: pointer;"></i>
+                    <div style="margin-left: 180px;" id="settitle">تنظیمات</div>
+                </div>
+                <div id="set-list">
+                    <ul class="set-list">
+                        <li id="bgbtn" style="border-top: 2px solid rgba(128, 128, 128, 0.297);"><i class="fa fa-image" style="padding-left: 40px;"></i>تغییر والپیپر </li>
+                        <!-- <li><i class="fa fa-money" style="padding-left: 40px;"></i>تغییر قیمت </li> -->
+                        <!-- <li id="dbo" style="cursor: not-allowed;"><i class="fa fa-calendar-check-o" style="padding-left: 40px;"></i>حساب روزانه </li> -->
+                        <li id="about-btn"><i class="fa fa-info-circle" style="padding-left: 40px;"></i>راهنما </li>
+                        <li id="appbtn" style="border: none;"><i class="fa fa-bug" style="padding-left: 40px;"></i>درباره برنامه </li>
+                    </ul>
+                </div>
+                <div style="display: none;" id="bg-sec">
+                    <div class="img-couple">
+                        <img id="bg-1" src="./wallpaper/alena-aenami-rooflinesgirl-1k-2.jpg" alt="">
+                        <img id="bg-2" src="./wallpaper/astronut.png" alt="">
+                    </div>
+                    <div class="img-couple">
+                        <img id="bg-3" src="./wallpaper/cyberppunk-wall-footer.jpg" alt="">
+                        <img id="bg-4" src="./wallpaper/cyberpunk2077.png" alt="">
+                    </div>
+                    <div class="img-couple">
+                        <img id="bg-5" src="./wallpaper/rdr2-2.jpg" alt="">
+                        <img id="bg-6" src="./wallpaper/edgerunners.webp" alt="">
+                    </div>
+                    <div class="img-couple">
+                        <img id="bg-7" src="./wallpaper/rdr2.jpg" alt="">
+                        <img id="bg-8" src="./wallpaper/ghost1.jpg" alt="">
+                    </div>
+                    <div class="img-couple">
+                        <img id="bg-9" src="./wallpaper/ghost2.jpg" alt="">
+                        <img id="bg-10" src="./wallpaper/cyberpunk-2077-phantom-liberty-bundle-bx.jpg" alt="">
+                    </div>
+                    <div class="img-couple">
+                        <img id="bg-11" src="./wallpaper/samurai-cyberpunk-2077-u6.jpg" alt="">
+                        <img id="bg-12" src="./wallpaper/cyberpunk-2077-samurai.jpg" alt="Empty">
+                    </div>
+                </div>
+                <div class="set-list" id="about" style="display: none;">
+                    <div style="padding: 20px;">
+                        <div> 1.هنگام استفاده از برنامه هیچوقت آنرا نبندید زیرا اطلاعات اسلات های تایمرذخیره نمیشوند و حساب روزانه شما بهم میخورد.</div>
+                        <div style="margin-top: 20px;">2. ارقام را در ورودی های ساعت در قالب 24 ساعت و بدون دو نقطه وسط وارد کنید.</div>
+                        <div style="margin-top: 20px;">3. برای تغییر تعداد دسته یا نوع کنسول باید ابتدا حساب اسلات اول را ببندید و اسلاتی جدید باز کنید.</div>
+                        <div style="margin-top: 20px;">4. هنگامی که قیمت کنسول یا دسته را تغییر میدهید ذخیره نمیشوند و زمانی که دوباره index را باز کردید باید قیمت ها را اصلاح کنید و یا آنها را از سورس جاوا اسکریپت تغیییر دهید.</div>
+                        <div style="margin-top: 100px;">
+                            <div style="text-align: center;">جزئیات آپدیت 2.1 (بزودی با فلش)</div>
+                            <div> -اضافه شدن بوفه</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="set-list" style="display: none;" id="appinfo">
+                    <div style="padding: 20px; font-size: 20px;">
+                        <div>نسخه : 2.0 آپدیت 1</div>
+                        <div style="margin-top: 10px;">آخرین آپدیت : 11/4/1403</div>
+                        <div style="margin-top: 10px;">سازنده : امیرمحمد نوبخت</div>
+                    </div>
+                </div>
+                <!-- <div class="set-list" style="display: none;" id="daily">
+                    <div style="padding: 20px; margin-top: 100px;">
+                        <div style="text-align: center; color: rgb(168, 255, 168);">
+                            <div>حساب روزانه شما :</div>
+                            <div id="db" style="font-size: 30px;">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="price-box">
+        <div class="row1">
+            <div>کنسول</div>
+            <div>دسته</div>
+            <div>ساعت شروع</div>
+            <div>ساعت پایان</div>
+            <div>زمان بازی</div>
+            <div>بوفه و خدمات</div>
+            <div style="color: rgb(168, 255, 168);">مبلغ پایانی $</div>
+        </div>
+        <div class="row1">
+            <select class="select" value="" id="r1c">
+                <option value="ps4">PS4</option>
+                <option value="ps5">PS5</option>
+            </select>
+            <select class="select" value="" id="r1d">
+                <option value="con1">یک دسته</option>
+                <option value="con2">دو دسته</option>
+                <option value="con3">سه دسته</option>
+                <option value="con4">چهار دسته</option>
+            </select>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r1ms" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r1hs" maxlength="2">
+            </div>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r1me" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r1he" maxlength="2">
+            </div>
+            <div class="time">
+                <p id="tt1">0 دقیقه</p>
+            </div>
+            <div class="boofe">
+                <input type="number" class="input" style="width: 150px;" id="b1">
+            </div>
+            <div style="color: rgb(168, 255, 168); display: flex; justify-content: center;" id="r1p">
+                <div id="final" style="border: none; margin-top: 0;">--</div>
+                <button id="t1" style="margin-right: 20px;" class="end-btn"><i class="fa fa-trash"></i></button>
+                <button id="calc-btn" class="final-btn"><i class="fa fa-check"></i></button>
+            </div>
+        </div>
+        <div class="row1">
+            <select class="select" value="" id="r2c">
+                <option value="ps4">PS4</option>
+                <option value="ps5">PS5</option>
+            </select>
+            <select class="select" value="" id="r2d">
+                <option value="con1">یک دسته</option>
+                <option value="con2">دو دسته</option>
+                <option value="con3">سه دسته</option>
+                <option value="con4">چهار دسته</option>
+            </select>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r2ms" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r2hs" maxlength="2">
+            </div>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r2me" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r2he" maxlength="2">
+            </div>
+            <div class="time">
+                <p id="tt2">0 دقیقه</p>
+            </div>
+            <div class="boofe">
+                <input type="number" class="input" style="width: 150px;" id="b2">
+            </div>
+                <div style="color: rgb(168, 255, 168); display: flex; justify-content: center;" id="r1p">
+                <div id="final2" style="border: none; margin-top: 0;">--</div>
+                <button id="t2" style="margin-right: 20px;" class="end-btn"><i class="fa fa-trash"></i></button>
+                <button id="calc-btn2" class="final-btn"><i class="fa fa-check"></i></button>
+            </div>
+        </div>
+        <div class="row1">
+            <select class="select" value="" id="r3c">
+                <option value="ps4">PS4</option>
+                <option value="ps5">PS5</option>
+            </select>
+            <select class="select" value="" id="r3d">
+                <option value="con1">یک دسته</option>
+                <option value="con2">دو دسته</option>
+                <option value="con3">سه دسته</option>
+                <option value="con4">چهار دسته</option>
+            </select>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r3ms" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r3hs" maxlength="2">
+            </div>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r3me" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r3he" maxlength="2">
+            </div>
+            <div class="time">
+                <p id="tt3">0 دقیقه</p>
+            </div>
+            <div class="boofe">
+                <input type="number" class="input" style="width: 150px;" id="b3">
+            </div>
+            <div style="color: rgb(168, 255, 168); display: flex; justify-content: center;" id="r1p">
+                <div id="final3" style="border: none; margin-top: 0;">--</div>
+                <button id="t3" style="margin-right: 20px;" class="end-btn"><i class="fa fa-trash"></i></button>
+                <button id="calc-btn3" class="final-btn"><i class="fa fa-check"></i></button>
+            </div>
+        </div>
+        <div class="row1">
+            <select class="select" value="" id="r4c">
+                <option value="ps4">PS4</option>
+                <option value="ps5">PS5</option>
+            </select>
+            <select class="select" value="" id="r4d">
+                <option value="con1">یک دسته</option>
+                <option value="con2">دو دسته</option>
+                <option value="con3">سه دسته</option>
+                <option value="con4">چهار دسته</option>
+            </select>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r4ms" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r4hs" maxlength="2">
+            </div>
+            <div style="margin: 0;" class="input-box">
+                <input type="number" class="input" id="r4me" maxlength="2">
+                <div style="border: none;">
+                    :
+                </div>
+                <input type="number" class="input" id="r4he" maxlength="2">
+            </div>
+            <div class="time">
+                <p id="tt4">0 دقیقه</p>
+            </div>
+            <div class="boofe">
+                <input type="number" class="input" style="width: 150px;" id="b4">
+            </div>
+            <div style="color: rgb(168, 255, 168); display: flex; justify-content: center;" id="r1p">
+                <div id="final4" style="border: none; margin-top: 0;">--</div>
+                <button id="t4" style="margin-right: 20px;" class="end-btn"><i class="fa fa-trash"></i></button>
+                <button id="calc-btn4" class="final-btn"><i class="fa fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./files/script.js"></script>
+</html>
